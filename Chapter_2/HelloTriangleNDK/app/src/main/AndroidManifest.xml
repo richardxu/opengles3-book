@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <!--
         <activity android:name=".NativeActivity">
-            <!--这里比较重要，value指的是ndk生成的库-->
             <meta-data android:name="android.app.lib_name"
                 android:value="Hello_Triangle" />
 
@@ -20,6 +20,22 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        -->
+
+        <activity android:name="android.app.NativeActivity"
+            android:label="HelloTriangle"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:launchMode="singleTask"
+            android:configChanges="orientation|keyboardHidden">
+            <!--这里比较重要，value指的是ndk生成的库-->
+            <meta-data android:name="android.app.lib_name"
+                android:value="Hello_Triangle" />
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
     </application>
 
 </manifest>
